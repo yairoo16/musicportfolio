@@ -16,21 +16,18 @@ public class Request {
 	@Column(name="Id")
 	private int id;
 
-	@Column(name="Email")
+	@Column(name="email")
 	private String email;
 	
-	@Column(name="Subject")
+	@Column(name="subject")
 	private String subject;
 	
-	@Column(name="Description")
+	@Column(name="description")
 	private String description;
-	
 	
 	public Request() {
 		
 	}
-	
-	
 
 	public Request(String email, String subject, String description) {
 		this.email = email;
@@ -43,11 +40,9 @@ public class Request {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public String getEmail() {
 		return email;
@@ -72,8 +67,6 @@ public class Request {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-
 
 	@Override
 	public String toString() {

@@ -3,7 +3,6 @@ package com.orellanab.springboot.musicportfolio.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -23,7 +22,6 @@ public class RequestDAOImpl implements RequestDAO {
 	}
 	
 	@Override
-	@Transactional
 	public List<Request> findAllRequests() {
 		
 		Session currentSession = _entityManager.unwrap(Session.class);
@@ -33,6 +31,37 @@ public class RequestDAOImpl implements RequestDAO {
 		List<Request> requests = query.getResultList();
 		
 		return requests;
+	}
+
+	@Override
+	public Request findById(int id) {
+		
+		Session currentSession = _entityManager.unwrap(Session.class);
+		
+		Request employee = currentSession.get(Request.class, id);
+		
+		return employee;
+	}
+
+	@Override
+	public void save(Request request) {
+		
+		Session currentSession = _entityManager.unwrap(Session.class);
+		
+		currentSession.saveOrUpdate(request);
+		
+	}
+
+	@Override
+	public void deleteById(int id) {
+
+		Session currentSession = _entityManager.unwrap(Session.class);
+		
+		Query query = currentSession.createQuery("delete from Request where id=:requestId");
+		query.setParameter("requestId", id);
+		
+		query.executeUpdate();
+		
 	}
 
 }

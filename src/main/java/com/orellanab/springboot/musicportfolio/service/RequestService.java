@@ -1,10 +1,10 @@
-package com.orellanab.springboot.musicportfolio.dao;
+package com.orellanab.springboot.musicportfolio.service;
 
 import java.util.List;
 
 import com.orellanab.springboot.musicportfolio.entity.Request;
 
-public interface RequestDAO {
+public interface RequestService {
 	
 	public List<Request> findAllRequests();
 	
@@ -13,4 +13,5 @@ public interface RequestDAO {
 	public void save(Request request);
 	
 	public void deleteById(int id);
+
 }
