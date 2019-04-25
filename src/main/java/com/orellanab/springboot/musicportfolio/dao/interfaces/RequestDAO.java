@@ -1,4 +1,4 @@
-package com.orellanab.springboot.musicportfolio.dao;
+package com.orellanab.springboot.musicportfolio.dao.interfaces;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.orellanab.springboot.musicportfolio.service;
+package com.orellanab.springboot.musicportfolio.service.interfaces;
 
 import java.util.List;
 

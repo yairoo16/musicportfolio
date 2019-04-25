@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.orellanab.springboot.musicportfolio.dao.RequestDAO;
+import com.orellanab.springboot.musicportfolio.dao.interfaces.RequestDAO;
 import com.orellanab.springboot.musicportfolio.entity.Request;
+import com.orellanab.springboot.musicportfolio.service.interfaces.RequestService;
 
 @Service
 public class RequestServiceImpl implements RequestService {

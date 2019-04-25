@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.orellanab.springboot.musicportfolio.entity.Request;
-import com.orellanab.springboot.musicportfolio.service.RequestService;
+import com.orellanab.springboot.musicportfolio.service.interfaces.RequestService;
 
 @RestController
 @RequestMapping("/api")

@@ -1,5 +1,6 @@
 package com.orellanab.springboot.musicportfolio.dao;
 
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,6 +10,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.orellanab.springboot.musicportfolio.dao.interfaces.RequestDAO;
 import com.orellanab.springboot.musicportfolio.entity.Request;
 
 @Repository
