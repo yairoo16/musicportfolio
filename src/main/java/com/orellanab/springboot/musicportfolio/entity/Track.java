@@ -19,10 +19,10 @@ public class Track {
 	@Column(name="title")
 	private String title;
 	
-	@Column(name="genreId")
-	private String genreId;
+	@Column(name="genre_id")
+	private int genreId;
 	
-	@Column(name="release-date")
+	@Column(name="release_date")
 	private String releaseDate;
 	
 	@Column(name="image")
@@ -30,6 +30,9 @@ public class Track {
 	
 	@Column(name="music")
 	private String music;
+	
+	@Column(name="is_featured")
+	private Boolean isFeatured;
 
 	public Track() {
 		
@@ -51,11 +54,11 @@ public class Track {
 		this.title = title;
 	}
 
-	public String getGenreId() {
+	public int getGenreId() {
 		return genreId;
 	}
 
-	public void setGenreId(String genreId) {
+	public void setGenreId(int genreId) {
 		this.genreId = genreId;
 	}
 
@@ -81,6 +84,14 @@ public class Track {
 
 	public void setMusic(String music) {
 		this.music = music;
+	}
+	
+	public Boolean isFeatured() {
+		return isFeatured;
+	}
+
+	public void setFeatured(Boolean isFeatured) {
+		this.isFeatured = isFeatured;
 	}
 
 	@Override
