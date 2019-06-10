@@ -35,9 +35,16 @@ public class TrackDAOImpl implements TrackDAO {
 	}
 
 	@Override
-	public Track findById(int id) {
+	public Track findTrackById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		Session currentSession = _entityManager.unwrap(Session.class);
+		
+		Query<Track> query = currentSession.createQuery("from Track where id = :id", Track.class);
+		query.setParameter("id", id);
+		
+		Track track = query.getSingleResult();
+		
+		return track;
 	}
 
 	@Override

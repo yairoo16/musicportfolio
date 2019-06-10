@@ -8,7 +8,7 @@ public interface TrackService {
 
 	public List<Track> findAllTracks();
 	
-	public Track findById(int id);
+	public Track findTrackById(int id);
 	
 	public void save(Track track);
 	

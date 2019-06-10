@@ -6,9 +6,9 @@ import com.orellanab.springboot.musicportfolio.entity.Track;
 
 public interface TrackDAO {
 
-public List<Track> findAllTracks();
+	public List<Track> findAllTracks();
 	
-	public Track findById(int id);
+	public Track findTrackById(int id);
 	
 	public void save(Track track);
 	

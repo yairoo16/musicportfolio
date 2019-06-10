@@ -30,8 +30,8 @@ public class Track implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="track_id")
-	private int trackId;
+	@Column(name="id")
+	private int id;
 
 	@Column(name="title")
 	private String title;
@@ -64,11 +64,11 @@ public class Track implements Serializable {
 	}
 
 	public int getId() {
-		return trackId;
+		return id;
 	}
 
 	public void setId(int id) {
-		this.trackId = id;
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -129,7 +129,7 @@ public class Track implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Track [id=" + trackId + ", title=" + title + ", genreId=" + genreId + ", releaseDate=" + releaseDate
+		return "Track [id=" + id + ", title=" + title + ", genreId=" + genreId + ", releaseDate=" + releaseDate
 				+ ", image=" + image + ", music=" + music + "]";
 	}
 	

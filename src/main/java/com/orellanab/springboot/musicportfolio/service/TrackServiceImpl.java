@@ -25,9 +25,9 @@ public class TrackServiceImpl implements TrackService {
 	}
 
 	@Override
-	public Track findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Track findTrackById(int id) {
+
+		return _trackDAO.findTrackById(id);
 	}
 
 	@Override

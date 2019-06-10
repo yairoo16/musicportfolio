@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +27,12 @@ public class TrackRestController {
 	@GetMapping("/tracks")
 	public List<Track> findAllTracks() {
 		return _trackService.findAllTracks();
+	}
+	
+	@CrossOrigin
+	@GetMapping("/tracks/{id}")
+	public Track findTrackById(@PathVariable int id) {
+		return _trackService.findTrackById(id);
 	}
 	
 	
