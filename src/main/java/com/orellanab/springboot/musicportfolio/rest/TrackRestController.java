@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.orellanab.springboot.musicportfolio.entity.Track;
@@ -29,11 +31,18 @@ public class TrackRestController {
 		return _trackService.findAllTracks();
 	}
 	
+	
+	@CrossOrigin
+	@GetMapping("/tracks/search")
+	@ResponseBody
+	public List<Track> findTracksBySearch(@RequestParam String searchValue) {
+		return _trackService.findTracksBySearch(searchValue);
+	}
+	
 	@CrossOrigin
 	@GetMapping("/tracks/{id}")
 	public Track findTrackById(@PathVariable int id) {
 		return _trackService.findTrackById(id);
 	}
-	
 	
 }

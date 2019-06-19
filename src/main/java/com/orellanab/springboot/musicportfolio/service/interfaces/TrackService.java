@@ -8,6 +8,8 @@ public interface TrackService {
 
 	public List<Track> findAllTracks();
 	
+	public List<Track> findTracksBySearch(String searchValue);
+	
 	public Track findTrackById(int id);
 	
 	public void save(Track track);

@@ -23,6 +23,12 @@ public class TrackServiceImpl implements TrackService {
 		
 		return _trackDAO.findAllTracks();
 	}
+	
+	@Override
+	public List<Track> findTracksBySearch(String searchValue) {
+		
+		return _trackDAO.findTracksBySearch(searchValue);
+	}
 
 	@Override
 	public Track findTrackById(int id) {

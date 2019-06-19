@@ -33,10 +33,23 @@ public class TrackDAOImpl implements TrackDAO {
 		
 		return tracks;
 	}
+	
+	@Override
+	public List<Track> findTracksBySearch(String searchValue) {
+		
+		Session currentSession = _entityManager.unwrap(Session.class);
+		
+		Query<Track> query = currentSession.createQuery("from Track where title = :searchValue", Track.class);
+		query.setParameter("searchValue", searchValue);
+		
+		List<Track> tracks = query.getResultList();
+		
+		return tracks;
+	}
 
 	@Override
 	public Track findTrackById(int id) {
-		// TODO Auto-generated method stub
+		
 		Session currentSession = _entityManager.unwrap(Session.class);
 		
 		Query<Track> query = currentSession.createQuery("from Track where id = :id", Track.class);
@@ -58,5 +71,6 @@ public class TrackDAOImpl implements TrackDAO {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }
